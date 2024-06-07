@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Language Selector</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="tabs">
+            <button class="tab-button active" data-lang="java">Java</button>
+            <!-- button class="tab-button" data-lang="python">Python</button>
+            <button class="tab-button" data-lang="cpp">C++</button>
+            <button class="tab-button" data-lang="csharp">C#</button -->
+            <button class="tab-button" data-lang="javascript">JavaScript</button>
+        </div>
+        <div class="code-blocks">
+            <div class="code-block" id="java">
+<pre><code class="language-java">
+class Solution {
+    public int[] twoSum(int[] nums, int target) {
+        Map<Integer, Integer> seen = new HashMap<>();
+        for (int i = 0; i < nums.length; i++) {
+            int complement = target - nums[i];
+            if (seen.containsKey(complement)) {
+                return new int[] { seen.get(complement), i };
+            }
+            seen.put(nums[i], i);
+        }
+        return new int[0];
+    }
+}
+</code></pre>
+            </div>
+            <div class="code-block" id="JavaScript" style="display: none;">
+<pre><code class="language-python">
+var twoSum = function(nums, target) {
+    let mp = new Map()
+    
+    for (let i = 0; i < nums.length; i++) {
+        let diff = target - nums[i]
+        
+        if (mp.has(diff)) {
+            return [i, mp.get(diff)]
+        }
+        
+        mp.set(nums[i], i)
+    }
+};
+</code></pre>
+            </div>
+            <!-- Add more code blocks for other languages -->
+        </div>
+    </div>
+    <script src="../js/scripts.js"></script>
+</body>
+</html>
